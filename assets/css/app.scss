@@ -1,7 +1,9 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
 @import "../node_modules/nprogress/nprogress.css";
+@import "../node_modules/leaflet/dist/leaflet.css";
 @import "chirp";
+@import "flight-sim";
 
 /* LiveView specific classes for your customizations */
 .invalid-feedback {

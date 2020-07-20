@@ -40,6 +40,14 @@ module.exports = (env, options) => {
             'css-loader',
             'sass-loader',
           ],
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          loader: "file-loader",
+          options: {
+            outputPath: "images",
+            name: '[name].[ext]',
+          }
         }
       ]
     },

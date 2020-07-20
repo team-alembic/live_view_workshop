@@ -25,6 +25,9 @@ defmodule LiveViewWorkshopWeb.Router do
     live "/posts/:id/edit", PostLive.Index, :edit
     live "/posts/:id", PostLive.Show, :show
     live "/posts/:id/show/edit", PostLive.Show, :edit
+
+    live "/flight-simulator", FlightSimulatorLive,
+      layout: {LiveViewWorkshopWeb.LayoutView, :flight_simulator}
   end
 
   # Other scopes may use custom stacks.

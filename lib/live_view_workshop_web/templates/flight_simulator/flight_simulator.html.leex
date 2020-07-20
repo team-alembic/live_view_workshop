@@ -1,0 +1,37 @@
+<div id="flight-sim">
+  <header class="top">
+    <h3>Ground Control to Major Tom <small>by Josh Price</small></h3>
+  </header>
+
+  <div phx-window-keydown="control_input">
+    <div class="box">
+      <%= render "horizon.html",
+        pitch_angle: @simulator.pitch_angle,
+        roll_angle: @simulator.roll_angle,
+        altitude: @simulator.altitude,
+        speed: @simulator.speed %>
+    </div>
+    <div class="box">
+      <%= render "compass.html", bearing: @simulator.bearing %>
+    </div>
+  </div>
+  <span
+    phx-hook="Map"
+    data-lat="<%= @simulator.location.lat %>"
+    data-lng="<%= @simulator.location.lng %>"
+    data-alt="<%= @simulator.altitude %>"
+    data-bearing="<%= @simulator.bearing %>"
+    data-pitch="<%= @simulator.pitch_angle %>">
+  </span>
+
+  <div class="box" phx-update="ignore">
+    <div id="map"></div>
+  </div>
+  <div id="view" phx-update="ignore"></div>
+
+  <footer class="bottom">
+    <a href="https://github.com/joshprice/groundstation#keyboard-commands">
+      Instructions
+    </a>
+  </footer>
+</div>
